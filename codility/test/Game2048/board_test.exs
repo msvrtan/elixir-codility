@@ -15,4 +15,31 @@ defmodule Game2048.BoardTest do
              [nil, nil, nil, nil]
            ] == Board.empty(4)
   end
+
+  test "adds random item to empty board" do
+    board = Board.empty(4)
+
+    assert [
+             [2, nil, nil, nil],
+             [nil, nil, nil, nil],
+             [nil, nil, nil, nil],
+             [nil, nil, nil, nil]
+           ] == Board.add_random_item(board)
+  end
+
+  test "adds random item to next empty space" do
+    board = [
+      [2, nil, nil, nil],
+      [nil, nil, nil, nil],
+      [nil, nil, nil, nil],
+      [nil, nil, nil, nil]
+    ]
+
+    assert [
+             [2, 2, nil, nil],
+             [nil, nil, nil, nil],
+             [nil, nil, nil, nil],
+             [nil, nil, nil, nil]
+           ] == Board.add_random_item(board)
+  end
 end
