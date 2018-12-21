@@ -42,4 +42,16 @@ defmodule Game2048.BoardTest do
              [nil, nil, nil, nil]
            ] == Board.add_random_item(board)
   end
+
+  test "count number of empty items on empty board" do
+    board = Board.empty(4)
+
+    assert 16 == Board.count_empty(board)
+  end
+
+  test "count number of empty items on small empty board" do
+    board = Board.empty(2)
+
+    assert 4 == Board.count_empty(board)
+  end
 end

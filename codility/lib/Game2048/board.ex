@@ -23,4 +23,10 @@ defmodule Game2048.Board do
       [head | tail] -> [head | add_item_to_first_empty_position(tail)]
     end
   end
+
+  def count_empty(board) do
+    board
+    |> List.flatten()
+    |> Enum.count(&(&1 == nil))
+  end
 end
