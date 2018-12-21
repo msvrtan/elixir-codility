@@ -4,6 +4,12 @@ defmodule Game2048.Board do
   """
   alias Game2048.Row
 
+  def new(size) do
+    empty(size)
+    |> add_random_item()
+    |> add_random_item()
+  end
+
   def empty(size) do
     for _ <- 1..size, do: Row.empty(size)
   end

@@ -16,6 +16,15 @@ defmodule Game2048.BoardTest do
            ] == Board.empty(4)
   end
 
+  test "new board will have 2 random element set" do
+    assert [
+             [2, 2, nil, nil],
+             [nil, nil, nil, nil],
+             [nil, nil, nil, nil],
+             [nil, nil, nil, nil]
+           ] == Board.new(4)
+  end
+
   test "adds random item to empty board" do
     board = Board.empty(4)
 
